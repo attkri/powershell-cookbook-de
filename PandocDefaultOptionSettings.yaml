@@ -1,0 +1,46 @@
+﻿#pdf-engine: lualatex # Sonst wird LaTex verwendet
+dpi: 600
+table-of-contents: true
+toc-depth: 3
+number-sections: false # aktiviert die Nummerierung vor den jeweiligen Überschriften 
+highlight-style: tango # zenburn, tango, espresso | NOGO: pygments, kate, monochrome, breezedark, haddock
+verbosity: WARNING # INFO | WARNING | ERROR
+fail-if-warnings: true
+
+resource-path:
+  - C:\Users\Attila\OneDrive\Wissen\PowerShell\Internal
+
+metadata:
+
+variables:
+  
+  # Language variables
+  lang: de-DE
+
+  # Variables for LaTeX
+  papersize: a4
+  geometry:
+  - left=30mm
+  - top=30mm
+  - right=30mm
+  - bottom=30mm
+  #mainfont: 'Segoe UI'
+  fontsize: 11pt # 10, 11, 12pt
+  sansfont: 'Segoe UI'
+  monofont: 'Cascadia Mono'
+  mathfont:
+  colorlinks: true
+  links-as-notes: true
+  # Variables set automatically
+  
+  header-includes:
+    # Code-Zeilen umbrechen
+    - \usepackage{fvextra}
+    - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    # Seiten-Titel anpassen
+    - \usepackage{fancyhdr} # https://texblog.org/2007/11/07/headerfooter-in-latex-with-fancyhdr/
+    - \pagestyle{fancy}
+    - \fancyhead[RO,RE]{}
+
+  include-before:
+    - '\newpage{}'
