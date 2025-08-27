@@ -1,123 +1,192 @@
 # Regeln für das PowerShell-Kompendium
 
-Titel: PowerShell meistern
+Titel: PowerShell Cookbook
 
-## 1. Stil & Ziel
+Version: 4
+
+Dieses Dokument bündelt **alle Regeln** für Formatierung, Struktur, Inhalte und Handling des Kompendiums.
+Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünftige Kapitel und Handlungsweisen.
+
+## Stil & Ziel
 
 - Kompendium = **Nachschlagewerk**, kein Seminar-Skript – als Handout für meine Teilnehmer  
-- **Fakten + kurze Erklärung (2–3 Sätze) + Beispielcode**  
 - **Praxisorientiert** → Kochrezept-Stil  
 - **Keine Redundanz**: doppelte Inhalte streichen, bei Bedarf Querverweise setzen  
 - **Kein zusätzliches Meta-Wissen nötig**: alle wichtigen Infos direkt als Kommentar im Code. Hintergrundinfos optional am Kapitelende.  
 - Es wird mit **PowerShell 7.5** und **Visual Studio Code** gearbeitet.  
 
-## 2. MarkdownLint-Regeln (Formatierung)
+## Ist-Zustand
 
-- **MD022 / blanks-around-headings**  
-  Überschriften immer mit Leerzeilen davor und danach.  
+- Alles liegt unter https://github.com/attkri/powershell-cookbook-de
+- Jedes Kapitel liegt unter ./Kompendium/ einzeln als `.md`-Datei (`Kapitel <Nr> - <Titel>.md`).
+- Repository wird in VS Code bearbeitet.
+- Branch `main` ist der Arbeitsstand.
 
-- **MD031 / blanks-around-fences**  
-  Codeblöcke immer mit Leerzeilen davor und danach.  
+### Ordnerstruktur
 
-- **MD036 / no-emphasis-as-heading**  
-  Keine *kursiv* oder **fett** als Überschrift – immer echte `#`-Headings verwenden.  
-
-- **MD024 / no-duplicate-heading**  
-  Keine doppelten Überschrift-Texte. → Bei Bedarf mit Kontext ergänzen:  
-  `### Tastaturbefehle (Konsole)` vs. `### Tastaturbefehle (VSCode)`.  
-
-- **MD040 / fenced-code-language**  
-  Codeblöcke immer mit Sprache markieren (z. B. ```powershell).  
-
-- **MD012 / no-multiple-blanks**  
-  Keine mehrfachen Leerzeilen.  
-
-- **Keine `---` Trenner** verwenden.  
-
-- Das Zeichen – nie benutzen sondern durch - ersetzen.
-
-## 3. Inhalte & Struktur
-
-- **Tastaturbefehle** → nicht kürzen, komplette Tabellen beibehalten, bzw. mit Attila abstimmen  
-- **Überschriften** → immer klare Kapitelstruktur (1.1, 1.2 …), keine doppelten Titel.  
-- **about_-Seiten** → immer direkt im jeweiligen Unterkapitel mit `Get-Help -Name ... -ShowWindow` angeben, nicht gesammelt am Kapitelanfang.  
-- **Jedes Haupt- und Unterkapitel (z. B. 7.1, 7.2 …)** beginnt mit 1–2 Sätzen **Einleitung im Fließtext**, bevor Beispielcode folgt.  
-
-## 4. Abarbeitung
-
-- Immer **Kapitelweise Vorher/Nachher linear anzeigen**, gefolgt von einer kurzen Erklärung der gemachten Änderungen.  
-
-- Folgende Punkte können **ohne diese Vorher/Nachher/Beschreibung Darstellung** direkt umgesetzt werden, da der Umsetzung vertraut wird:  
-  - Lange Erklärungen im Schulungsstil → kürzen  
-  - Redundante Beispiele entfernen / Querverweise setzen  
-  - Rechtschreibfehler korrigieren  
-  - **Überschriften** → klare Kapitelstruktur (1.1, 1.2 …), keine doppelten Titel.  
-  - Kommentare zu jedem Aufruf kürzer formuliert.  
-  - Kommentarzeilen statt Fließtext.  
-  - Gleiche Beispiele, nur präziser gegliedert.  
-  - Text durch prägnante Kommentare ersetzt.  
-  - Fließtext komprimiert.  
-  - Beispiele durch Kommentare selbsterklärend.  
-  - Statt Fließtext → Liste mit Links, wenn sinnvoller.  
-  - Beispiel-Output nur dann, wenn er einen echten Mehrwert bringt → z. B. bei booleschen Ausdrücken, Typ-Prüfungen, Vergleichsoperatoren. Kein Platzfüller.  
-  - Begriffe durchgängig deutsch, aber Typnamen im Code Englisch → z. B. „Zeichenkette (String)“, „Ganzzahl (Int32)“.  
-  - **Best Practices** hervorheben und für Kapitel *Best Practice* aufheben.  
-  - **about_-Seiten** gezielt im passenden Unterkapitel angeben, nicht zentral gesammelt.  
-
-## 5. Kapitel-Ausgabe
-
-- Jedes Kapitel wird als **eigenständige `.md`-Datei** erstellt (`Kapitel_X.md`).  
-- Ausgabe **immer per Datei (Create_TextDoc)**, nicht nur als Markdown im Chat.  
-- Chat-Nachrichten dienen nur zur **Status-Meldung** (z. B. „Kapitel 14 fertig“), nicht für die eigentliche Datei.  
-- So bleibt das Kompendium konsistent und direkt für GitHub nutzbar.  
-
-## 6. Musterbeispiel
-
-Dateiname: **Kapitel 8 – Funktionen.md**
-
-### Inhalt (gekürzt)
-
-```markdown
-# Kapitel 8 – Funktionen
-
-Funktionen ermöglichen es, wiederverwendbare Codeblöcke zu definieren und übersichtlicher zu arbeiten.
-
-## 8.1 Einfache Funktionen
-
-Eine Funktion wird mit dem Schlüsselwort **function** definiert.
-
-```powershell
-function Hallo {
-    "Hallo Welt"
-}
-
-Hallo
+```asci
+/ (Root)
+├─ .github
+│   └─ workflows
+│       └─ build-kompendium-pdf.yml                   # GitHub Actions Workflow baut bei Push/Release ein PDF.
+├─ .vscode
+│   └─ settings.json
+├─ Archiv\                                            # Nur Offline
+├─ Kompendium\
+│   ├─ .TOC.md
+│   ├─ Kapitel 1 - Einführung & Überblick.md
+│   ├─ Kapitel 2 - Tools zur & für PowerShell.md
+│   ├─ <usw.>
+│   └─ Kapitel 42 - Best Practices & Standards.md
+├─ tools/
+│   ├─ Build-Kompendium.ps1                           # Script zum Bauen des Masterdokuments
+│   ├─ Pandoc.ps1                                     # Code Schnippsel
+│   ├─ PandocDefaultOptionSettings.yaml
+│   └─ Worker.ps1                                
+└─ .gitignore
+├─ Regeln.md                      # Dieses Dokument
+REASDME # Projektbeschreibung (noch zu ergänzen)
+LIZENZ
 ```
+
+### Inhaltsverzeichnis
+
+- [1. Einführung & Überblick](Kapitel 1 - Einführung & Überblick.md)
+- [2. Tools für PowerShell](Kapitel 2 - Tools zur & für PowerShell.md)
+- [3. Hilfe-System](Kapitel 3 - Hilfe-System.md)
+- [4. Datentypen](Kapitel 4 - Datentypen.md)
+- [5. Variablen](Kapitel 5 - Variablen.md)
+- [6. Operatoren](Kapitel 6 - Operatoren.md)
+- [7. Bedingungen](Kapitel 7 - Bedingungen.md)
+- [8. Schleifen](Kapitel 8 - Schleifen.md)
+- [9. Funktionen](Kapitel 9 - Funktionen.md)
+- [10. Module](Kapitel 10 - Module.md)
+- [11. Skripte](Kapitel 11 - Skripte.md)
+- [12. Pipeline](Kapitel 12 - Pipeline.md)
+- [13. Objekte](Kapitel 13 - Objekte.md)
+- [14. Fehler und Ausnahmen](Kapitel 14 - Fehlerbehandlung.md)
+- [15. Debugging](Kapitel 15 - Debugging.md)
+- [16. Module und Funktionen](Kapitel 16 - Module und Funktionen.md)
+- [17. PowerShell Remoting](Kapitel 17 - PowerShell Remoting.md)
+- [18. Jobs und parallele Ausführung](Kapitel 18 - Jobs und parallele Ausführung.md)
+- [19. Fehlerkultur & Best Practices](Kapitel 19 - Fehlerkultur & Best Practices.md)
+- [20. PowerShell und Dateien](Kapitel 20 - PowerShell und Dateien.md)
+- [21. Registry und Umgebungsvariablen](Kapitel 21 - Registry und Umgebungsvariablen.md)
+- [22. Prozesse und Dienste](Kapitel 22 - Prozesse und Dienste.md)
+- [23. Netzwerk & Verbindungen](Kapitel 23 -  Netzwerk & Verbindungen.md)
+- [24. Sicherheit & Signaturen](Kapitel 24 - Sicherheit & Signaturen.md)
+- [25. PowerShell Profile & Anpassung](Kapitel 25 - PowerShell Profile & Anpassung.md)
+- [26. PSReadLine & Eingabeoptimierung](Kapitel 26 - PSReadLine & Eingabeoptimierung.md.md)
+- [27. PowerShell Gallery & Paketmanagement](Kapitel 27 - PowerShell Gallery & Paketmanagement.md)
+- [28. Versionskontrolle mit Git](Kapitel 28 - Versionskontrolle mit Git.md)
+- [29. Skripte testen mit Pester](Kapitel 29 - Skripte testen mit Pester.md)
+- [30. Automatisierung mit Tasks & Scheduler](Kapitel 30 - Automatisierung mit Tasks & Scheduler.md)
+- [31. PowerShell in CI/CD-Pipelines](Kapitel 31 - PowerShell in CI CD-Pipelines.md)
+- [32. PowerShell und REST-APIs](Kapitel 32 - PowerShell und REST-APIs.md)
+- [33. JSON, XML & CSV verarbeiten](Kapitel 33 - JSON, XML & CSV verarbeiten.md)
+- [34. PowerShell und WMI/CIM](Kapitel 34 - PowerShell und WMI CIM.md)
+- [35. Active Directory Verwaltung](Kapitel 35 - Active Directory Verwaltung.md)
+- [36. Exchange & Office 365 Verwaltung](Kapitel 36 - Exchange & Office 365.md)
+- [37. Windows Management (Updates, Eventlogs, Tasks)](Kapitel 37 - Windows Management.md)
+- [38. JEA (Just Enough Administration)](Kapitel 38 - JEA.md)
+- [39. Linux & Cross-Plattform PowerShell](Kapitel 39 - Linux & Cross-Plattform PowerShell.md)
+- [40. PowerShell und .NET-Integration](Kapitel 40 - PowerShell und .NET-Integration.md)
+- [41. GUI-Tools mit PowerShell](Kapitel 41 - GUI-Tools mit PowerShell.md)
+- [42. Best Practices & Standards](Kapitel 42 - Best Practices & Standards.md)
+
+### Actions
+
+- **Build Kompendium PDF** läuft bei Push, PR, Release oder manuell.
+- Artefakte: `PowerShell_Kompendium.pdf` im Actions-Tab
+- Bei Releases wird das PDF automatisch angehängt.
+
+## Anzuwendende Regeln
+
+### MarkdownLint-Regeln (technische Formatierung)
+
+Die folgenden Regeln gelten für alle Markdown-Ausgaben in diesem Chat.
+
+- **MD022 / blanks-around-headings**: Leerzeilen vor und nach Überschriften.
+- **MD031 / blanks-around-fences**: Leerzeilen vor und nach Codeblöcken.
+- **MD036 / no-emphasis-as-heading**: Keine *fetten/kursiven* Pseudo-Überschriften, nur echte `#`.
+- **MD024 / no-duplicate-heading**: Keine doppelten Titel → ggf. Kontext ergänzen.
+- **MD040 / fenced-code-language**: Codeblöcke immer mit Sprache (z. B. \`\`\`powershell).
+- **MD012 / no-multiple-blanks**: Keine doppelten Leerzeilen.
+- Keine `---` Trenner verwenden (Ausnahme: Kapitel 1 Übersicht).
+- Das Sonderzeichen `–` nicht benutzen sondern `-` ersetzen.
+
+### Kapitel-Regen
+
+- **Struktur der Kapitel**: Einleitung (2–3 Sätze) → Beispielcode → about\_-Hinweis → Best Practices.
+- Zusätzliche Gestaltung: Praxisboxen, Querverweise, Mini-TOCs bei längeren Kapiteln.
+
+### Muster-Aufbau
+
+````markdown
+# <Nr> Titel
+
+Kurze Einleitung (2–3 Sätze): erklärt Sinn & Nutzen des Themas.
+
+## <Nr>.<Sub_Nr> Unterthema
+
+Kurze Beschreibung, warum/wie man es einsetzt.
+
+<Beispiel_Code_mit_Kommentaren>
 
 👉 Weitere Infos:
 
-```powershell
-Get-Help -Name about_Functions -ShowWindow
+<Weitere_Hinweise>
+
+## <Nr>.<Sub_Nr> Best Practices
+
+- Kurze Listen mit Tipps
+- Kein Fülltext
+- Nur praxisrelevante Hinweise
 ```
 
-## 8.2 Funktionen mit Parametern
+## 4. Inhaltliche Regeln
 
-Funktionen können Eingaben über **Parameter** erhalten.
+- **Praxisorientiert**: Rezepte statt Theorie.  
+- **Keine Redundanz**: wenn Thema schon erklärt → Querverweis setzen.  
+- **Beispielcode kommentieren** statt lange Absätze schreiben.  
+- **Output nur wenn Mehrwert** (Bool, Typen, Vergleiche, etc.).  
+- **Begriffe deutsch, Typnamen englisch** (String, Int32).  
+- **Best Practices** am Ende jedes Kapitels, gesammelt wiederholt in Kapitel „Standards“.  
+- **Kapitel-Einleitungen im Fließtext** (kein „Einleitung:“ Label).  
+- **Große Themenblöcke** haben einen kleinen Überblick am Anfang.  
+- Lange Erklärungen im Schulungsstil → kürzen  
+- Redundante Beispiele entfernen / Querverweise setzen  
+- Rechtschreibfehler korrigieren  
+- **Überschriften** → klare Kapitelstruktur (1.1, 1.2 …), keine doppelten Titel.  
+- Kommentare zu jedem Aufruf kürzer formuliert.  
+- Kommentarzeilen statt Fließtext.  
+- Gleiche Beispiele, nur präziser gegliedert.  
+- Text durch prägnante Kommentare ersetzt.  
+- Fließtext komprimiert.  
+- Beispiele durch Kommentare selbsterklärend.  
+- Statt Fließtext → Liste mit Links, wenn sinnvoller.  
 
-```powershell
-function Begruessung {
-    param($Name)
-    "Hallo $Name"
-}
 
-Begruessung -Name "Attila"
-```
 
-👉 Weitere Infos:
 
-```powershell
-Get-Help -Name about_Parameters -ShowWindow
-```
-```
 
-➡️ Dieses Muster zeigt: Einleitung → Beispielcode → `about_`-Hinweis. Alle Kapitel folgen dieser Struktur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
