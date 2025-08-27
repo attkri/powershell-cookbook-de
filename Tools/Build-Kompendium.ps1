@@ -28,11 +28,6 @@ $Kapitel.RemoveAt(0)  # Erstes Kapitel (Übersicht) entfernen, da schon im Heade
 
 #endregion
 
-
-
-
-
-
 #region Write TOC
 
 [void]$sb.AppendLine('## Inhaltsverzeichnis')
@@ -72,12 +67,12 @@ foreach ($file in $Kapitel) {
     # jede Markdown-Überschrift (#...) um ein '#' erweitern
     $content = [regex]::Replace($content, '^(#+)', { "$($args[0].Groups[1].Value)#" }, 'Multiline')
     
-    # MD012: Mehrfach-Blankzeilen reduzieren
-    $content = [regex]::Replace($content, "($nl){3,}", "$nl$nl")
+    # # MD012: Mehrfach-Blankzeilen reduzieren
+    # $content = [regex]::Replace($content, "($nl){3,}", "$nl$nl")
     
-    # MD022: Leerzeile vor/nach H1 sicherstellen
-    $content = [regex]::Replace($content, "([^\r\n])$nl## ", "`$1$nl$nl## ")
-    $content = [regex]::Replace($content, "## (.+?)$nl(?!$nl)", "## `$1$nl$nl")
+    # # MD022: Leerzeile vor/nach H1 sicherstellen
+    # $content = [regex]::Replace($content, "([^\r\n])$nl## ", "`$1$nl$nl## ")
+    # $content = [regex]::Replace($content, "## (.+?)$nl(?!$nl)", "## `$1$nl$nl")
     
     $content = $content.TrimEnd()
     
