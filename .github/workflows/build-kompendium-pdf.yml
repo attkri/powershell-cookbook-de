@@ -1,85 +1,67 @@
 name: Build Kompendium PDF
 
-
 on:
-push:
-branches: [ main ]
-paths: [ "Kapitel_*.md", "tools/Build-Kompendium.ps1", ".github/workflows/build-kompendium-pdf.yml" ]
-pull_request:
-branches: [ main ]
-paths: [ "Kapitel_*.md", "tools/Build-Kompendium.ps1" ]
-workflow_dispatch: {}
-release:
-types: [created]
-
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "Kompendium/**"
+      - "Tools/**"
+      - "PandocDefaultOptionSettings.yaml"
+      - "Regeln.md"
+      - ".github/workflows/build-kompendium-pdf.yml"
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "Kompendium/**"
+      - "Tools/**"
+  release:
+    types: [ published ]
 
 permissions:
-contents: write
-
+  contents: write   # nötig, um Assets an Releases anzuhängen
 
 jobs:
-build:
-name: Build PDF
-runs-on: ubuntu-latest
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
+      # Pandoc + LaTeX-Engine (xelatex) installieren
+      - name: Install build dependencies (pandoc + TeX)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic \
+            fonts-dejavu fonts-liberation
+          pandoc --version
 
-steps:
-- name: Checkout
-uses: actions/checkout@v4
+      # Optional: PowerShell-Version anzeigen (pwsh ist auf ubuntu-latest vorinstalliert)
+      - name: PowerShell info
+        shell: pwsh
+        run: '$PSVersionTable'
 
+      # Dein bestehendes Build-Script ausführen
+      - name: Build Kompendium
+        shell: pwsh
+        run: |
+          ./Tools/Build-Kompendium.ps1 -ErrorAction Stop
+          if (-not (Test-Path "./PowerShell_Kompendium.pdf")) {
+            Write-Error "PDF nicht gefunden. Stelle sicher, dass Build-Kompendium.ps1 die Datei 'PowerShell_Kompendium.pdf' erzeugt."
+          }
 
-- name: Setup PowerShell
-uses: PowerShell/PowerShell@v1
-with:
-powershell-version: '7.4.x'
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PowerShell_Kompendium.pdf
+          path: PowerShell_Kompendium.pdf
+          if-no-files-found: error
+          retention-days: 14
 
-
-- name: Build master markdown (Kompendium.md)
-shell: pwsh
-run: |
-./tools/Build-Kompendium.ps1 -Verbose
-
-
-- name: Build PDF with Pandoc (LaTeX)
-run: |
-docker run --rm \
--v "$PWD:/data" \
-pandoc/latex:latest \
-pandoc Kompendium.md \
--o PowerShell_Kompendium.pdf \
---pdf-engine=xelatex \
---toc --toc-depth=2 \
---metadata title="PowerShell meistern" \
---metadata author="Attila Krick" \
---from=gfm
-
-
-- name: Upload artifact
-uses: actions/upload-artifact@v4
-with:
-name: PowerShell_Kompendium_PDF
-path: PowerShell_Kompendium.pdf
-if-no-files-found: error
-
-
-release:
-name: Attach PDF to Release
-needs: build
-runs-on: ubuntu-latest
-if: github.event_name == 'release'
-steps:
-- name: Checkout
-uses: actions/checkout@v4
-
-
-- name: Download artifact
-uses: actions/download-artifact@v4
-with:
-name: PowerShell_Kompendium_PDF
-path: dist
-
-
-- name: Upload to GitHub Release
-uses: softprops/action-gh-release@v2
-with:
-files: dist/PowerShell_Kompendium.pdf
+      # Bei Release zusätzlich als Asset anhängen
+      - name: Attach to release
+        if: github.event_name == 'release' && github.event.action == 'published'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: PowerShell_Kompendium.pdf

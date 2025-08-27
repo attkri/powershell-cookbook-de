@@ -37,11 +37,10 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 │   ├─ Kapitel 2 - Tools zur & für PowerShell.md
 │   ├─ <usw.>
 │   └─ Kapitel 42 - Best Practices & Standards.md
-├─ tools/
+├─ Tools/
 │   ├─ Build-Kompendium.ps1                           # Script zum Bauen des Masterdokuments
-│   ├─ Pandoc.ps1                                     # Code Schnippsel
+│   ├─ Pandoc.ps1                                     # Code Schnippsel zum Thema Pandoc
 │   ├─ PandocDefaultOptionSettings.yaml
-│   └─ Worker.ps1                                
 ├─ .gitignore
 ├─ License.md                                         # CC BY-NC 4.0 und MIT für Code
 ├─ README.md                                          # Projektbeschreibung
