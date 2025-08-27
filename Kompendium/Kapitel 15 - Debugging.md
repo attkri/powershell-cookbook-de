@@ -82,11 +82,11 @@ Debug-Runspace -Id 1
 
 Effizientes Debugging spart Zeit und reduziert Fehlersuchen:
 
-* Breakpoints gezielt setzen, nicht flächendeckend.
-* Tracing nur bei Bedarf nutzen, da es Leistung kostet.
-* In VSCode Call-Stack und Variablenüberwachung aktiv einsetzen.
-* Remote-Debugging nur über sichere Sessions durchführen.
-* Zum Schluss alle Breakpoints entfernen, um saubere Skripte zu gewährleisten.
+- Breakpoints gezielt setzen, nicht flächendeckend.
+- Tracing nur bei Bedarf nutzen, da es Leistung kostet.
+- In VSCode Call-Stack und Variablenüberwachung aktiv einsetzen.
+- Remote-Debugging nur über sichere Sessions durchführen.
+- Zum Schluss alle Breakpoints entfernen, um saubere Skripte zu gewährleisten.
 
 ```powershell
 Get-PSBreakpoint | Remove-PSBreakpoint

@@ -92,11 +92,11 @@ Get-Help -Name 'ForEach-Object' -ShowWindow
 
 ## 18.5 Best Practices
 
-* Für kurze, schnelle Tasks → **ThreadJobs** nutzen.
-* Für komplexe, unabhängige Tasks → **Hintergrundjobs** verwenden.
-* Für Remote-Systeme → **Remoting-Jobs** einsetzen.
-* Ressourcen im Blick behalten: viele parallele Jobs können Systemlast stark erhöhen.
-* Jobs nach Abschluss aufräumen, um Speicher zu sparen.
+- Für kurze, schnelle Tasks → **ThreadJobs** nutzen.
+- Für komplexe, unabhängige Tasks → **Hintergrundjobs** verwenden.
+- Für Remote-Systeme → **Remoting-Jobs** einsetzen.
+- Ressourcen im Blick behalten: viele parallele Jobs können Systemlast stark erhöhen.
+- Jobs nach Abschluss aufräumen, um Speicher zu sparen.
 
 ```powershell
 Get-Job | Remove-Job

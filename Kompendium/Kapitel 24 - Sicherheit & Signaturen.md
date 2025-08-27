@@ -49,10 +49,10 @@ Start-Process PowerShell -Verb RunAs
 
 ## 24.5 Best Practices
 
-* Execution Policy sinnvoll setzen: z. B. **RemoteSigned** für Benutzer, **AllSigned** in Unternehmen.
-* Skripte mit vertrauenswürdigen Zertifikaten signieren.
-* Nur notwendige Rechte vergeben, Prinzip der minimalen Berechtigung.
-* Signaturen regelmäßig prüfen.
+- Execution Policy sinnvoll setzen: z. B. **RemoteSigned** für Benutzer, **AllSigned** in Unternehmen.
+- Skripte mit vertrauenswürdigen Zertifikaten signieren.
+- Nur notwendige Rechte vergeben, Prinzip der minimalen Berechtigung.
+- Signaturen regelmäßig prüfen.
 
 ```powershell
 # Beispiel: Alle Skripte im Ordner prüfen

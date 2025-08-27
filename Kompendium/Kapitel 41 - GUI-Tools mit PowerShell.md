@@ -8,8 +8,8 @@ Get-Help -Name 'Show-Command' -ShowWindow
 
 ## 41.1 Grundlagen
 
-* **WinForms**: Einfach, schnell für kleine Tools.
-* **WPF**: Moderner, flexibler, trennt Oberfläche (XAML) und Logik.
+- **WinForms**: Einfach, schnell für kleine Tools.
+- **WPF**: Moderner, flexibler, trennt Oberfläche (XAML) und Logik.
 
 PowerShell kann beide Varianten direkt verwenden, da sie auf .NET basieren.
 
@@ -70,10 +70,10 @@ $button.Add_Click({
 
 ## 41.5 Best Practices
 
-* Für kleine Tools → WinForms nutzen.
-* Für komplexere Anwendungen → WPF mit XAML.
-* Logik und Oberfläche trennen (Code vs. XAML).
-* GUI-Tools dokumentieren und testen – sie sind fehleranfälliger als reine Skripte.
+- Für kleine Tools → WinForms nutzen.
+- Für komplexere Anwendungen → WPF mit XAML.
+- Logik und Oberfläche trennen (Code vs. XAML).
+- GUI-Tools dokumentieren und testen – sie sind fehleranfälliger als reine Skripte.
 
 ```powershell
 # Beispiel: Einfaches Eingabefeld

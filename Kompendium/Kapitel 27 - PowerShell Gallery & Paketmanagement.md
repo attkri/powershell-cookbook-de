@@ -74,10 +74,10 @@ Install-Script -Name Start-Build -Scope CurrentUser
 
 ## 27.6 Best Practices
 
-* Module nach Möglichkeit aus vertrauenswürdigen Quellen installieren.
-* Repositories klar trennen: **offiziell**, **intern**, **Test**.
-* Module regelmäßig aktualisieren, aber vorher testen.
-* Abhängigkeiten dokumentieren.
+- Module nach Möglichkeit aus vertrauenswürdigen Quellen installieren.
+- Repositories klar trennen: **offiziell**, **intern**, **Test**.
+- Module regelmäßig aktualisieren, aber vorher testen.
+- Abhängigkeiten dokumentieren.
 
 ```powershell
 # Alle installierten Module und Versionen anzeigen

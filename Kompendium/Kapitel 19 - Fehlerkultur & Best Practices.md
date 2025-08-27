@@ -48,11 +48,11 @@ catch {
 
 ## 19.5 Best Practices zusammengefasst
 
-* Fehlermeldungen klar und eindeutig formulieren.
-* Vorbedingungen prüfen, bevor Code ausgeführt wird.
-* Exceptions gezielt abfangen und nur dort, wo sinnvoll.
-* Logging einbauen, um Abläufe nachvollziehbar zu machen.
-* Fehler nicht verschweigen – lieber sauber melden und ggf. abbrechen.
+- Fehlermeldungen klar und eindeutig formulieren.
+- Vorbedingungen prüfen, bevor Code ausgeführt wird.
+- Exceptions gezielt abfangen und nur dort, wo sinnvoll.
+- Logging einbauen, um Abläufe nachvollziehbar zu machen.
+- Fehler nicht verschweigen – lieber sauber melden und ggf. abbrechen.
 
 👉 Weitere Infos:
 

@@ -65,9 +65,9 @@ Invoke-WebRequest -Uri "https://example.com" | Select-Object -ExpandProperty Con
 
 ## 23.6 Best Practices
 
-* Für einfache Pings `Test-Connection`, für Ports und Routing `Test-NetConnection` nutzen.
-* Nur benötigte Verbindungen dauerhaft offen lassen.
-* Bei automatisierten Downloads immer HTTPS und Zertifikate prüfen.
+- Für einfache Pings `Test-Connection`, für Ports und Routing `Test-NetConnection` nutzen.
+- Nur benötigte Verbindungen dauerhaft offen lassen.
+- Bei automatisierten Downloads immer HTTPS und Zertifikate prüfen.
 
 ```powershell
 # Verbindung absichern

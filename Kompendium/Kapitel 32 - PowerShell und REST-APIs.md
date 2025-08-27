@@ -62,10 +62,10 @@ catch {
 
 ## 32.6 Best Practices
 
-* Immer HTTPS verwenden, niemals unsichere HTTP-Verbindungen.
-* API-Keys und Tokens sicher speichern (z. B. SecretStore, Azure Key Vault).
-* Ergebnisse in Objekte umwandeln, um sie direkt weiterzuverarbeiten.
-* Rate-Limits und Quotas von APIs beachten.
+- Immer HTTPS verwenden, niemals unsichere HTTP-Verbindungen.
+- API-Keys und Tokens sicher speichern (z. B. SecretStore, Azure Key Vault).
+- Ergebnisse in Objekte umwandeln, um sie direkt weiterzuverarbeiten.
+- Rate-Limits und Quotas von APIs beachten.
 
 ```powershell
 # Ergebnis in Datei sichern

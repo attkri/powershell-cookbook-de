@@ -10,9 +10,9 @@ Get-Help -Name 'ScheduledTasks' -ShowWindow
 
 Mit der grafischen Oberfläche des Windows-Taskplaners können PowerShell-Skripte zu bestimmten Zeiten oder Ereignissen gestartet werden.
 
-* Trigger: Zeitplan oder Ereignis
-* Aktion: PowerShell.exe mit Skriptpfad
-* Bedingungen: z. B. nur bei Netzstrom
+- Trigger: Zeitplan oder Ereignis
+- Aktion: PowerShell.exe mit Skriptpfad
+- Bedingungen: z. B. nur bei Netzstrom
 
 ## 30.2 Aufgaben per PowerShell erstellen
 
@@ -54,10 +54,10 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "BackupAdmin"
 
 ## 30.5 Best Practices
 
-* Aufgaben klar benennen und dokumentieren.
-* Skripte mit Logging und Fehlerbehandlung ausstatten.
-* Tasks regelmäßig prüfen und aufräumen.
-* Nach Möglichkeit **pwsh.exe** statt **powershell.exe** nutzen (PowerShell 7).
+- Aufgaben klar benennen und dokumentieren.
+- Skripte mit Logging und Fehlerbehandlung ausstatten.
+- Tasks regelmäßig prüfen und aufräumen.
+- Nach Möglichkeit **pwsh.exe** statt **powershell.exe** nutzen (PowerShell 7).
 
 ```powershell
 # Beispiel: Logging im Taskskript

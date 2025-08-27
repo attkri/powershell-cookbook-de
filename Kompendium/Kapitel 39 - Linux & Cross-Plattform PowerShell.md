@@ -24,9 +24,9 @@ pwsh
 
 ## 39.2 Unterschiede zu Windows
 
-* Standard-Shell ist Bash, daher andere Tools verfügbar
-* Pfade: `/home/user` statt `C:\\Users\\user`
-* Dienste über `systemctl` statt `Get-Service`
+- Standard-Shell ist Bash, daher andere Tools verfügbar
+- Pfade: `/home/user` statt `C:\\Users\\user`
+- Dienste über `systemctl` statt `Get-Service`
 
 ```powershell
 # Beispiel: Prozessabfrage auf Linux
@@ -58,10 +58,10 @@ Enter-PSSession -HostName server01.linux.local -UserName admin
 
 ## 39.5 Best Practices
 
-* Plattformunterschiede in Skripten berücksichtigen.
-* Nur Cmdlets verwenden, die auf allen Plattformen funktionieren.
-* Für spezifische Plattformbefehle Bedingungen einbauen (`$IsWindows`, `$IsLinux`).
-* Wo möglich Standards wie SSH, JSON und REST nutzen.
+- Plattformunterschiede in Skripten berücksichtigen.
+- Nur Cmdlets verwenden, die auf allen Plattformen funktionieren.
+- Für spezifische Plattformbefehle Bedingungen einbauen (`$IsWindows`, `$IsLinux`).
+- Wo möglich Standards wie SSH, JSON und REST nutzen.
 
 ```powershell
 # Beispiel: plattformabhängige Logdateien

@@ -47,9 +47,9 @@ Set-PSReadLineKeyHandler -Key Ctrl+l -Function ClearScreen
 
 ## 26.5 Best Practices
 
-* Farben und Shortcuts an persönliche Vorlieben anpassen.
-* Verlauf regelmäßig bereinigen, falls sensible Daten enthalten sind.
-* Autovervollständigung mit Plugins wie **Az.Tools.Predictor** erweitern.
+- Farben und Shortcuts an persönliche Vorlieben anpassen.
+- Verlauf regelmäßig bereinigen, falls sensible Daten enthalten sind.
+- Autovervollständigung mit Plugins wie **Az.Tools.Predictor** erweitern.
 
 ```powershell
 # Verlauf löschen

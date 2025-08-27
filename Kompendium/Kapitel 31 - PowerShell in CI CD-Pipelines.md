@@ -55,10 +55,10 @@ Restart-Service -Name IIS
 
 ## 31.5 Best Practices
 
-* Skripte modular aufbauen, damit sie in verschiedenen Pipelines nutzbar sind.
-* Tests automatisiert in die Pipeline integrieren.
-* Fehlerbehandlung einbauen, damit Pipelines bei Problemen korrekt stoppen.
-* Konfigurationen und Secrets niemals fest im Skript speichern, sondern über Umgebungsvariablen oder Secret Stores.
+- Skripte modular aufbauen, damit sie in verschiedenen Pipelines nutzbar sind.
+- Tests automatisiert in die Pipeline integrieren.
+- Fehlerbehandlung einbauen, damit Pipelines bei Problemen korrekt stoppen.
+- Konfigurationen und Secrets niemals fest im Skript speichern, sondern über Umgebungsvariablen oder Secret Stores.
 
 ```powershell
 # Beispiel für Zugriff auf Secret in Pipeline

@@ -58,10 +58,10 @@ Import-Module PSReadLine
 
 ## 25.5 Best Practices
 
-* Profile klar strukturieren und dokumentieren.
-* Keine komplexen Skripte direkt im Profil – besser Funktionen oder Module nutzen.
-* Änderungen zuerst testen, bevor sie ins Profil übernommen werden.
-* Profil regelmäßig sichern und versionskontrolliert ablegen.
+- Profile klar strukturieren und dokumentieren.
+- Keine komplexen Skripte direkt im Profil – besser Funktionen oder Module nutzen.
+- Änderungen zuerst testen, bevor sie ins Profil übernommen werden.
+- Profil regelmäßig sichern und versionskontrolliert ablegen.
 
 ```powershell
 # Profil sichern

@@ -1,53 +1,93 @@
 ﻿[CmdletBinding()]
-param(
-[Parameter()] [string]$Output = 'Kompendium.md',
-[Parameter()] [string]$Title = '# PowerShell meistern — Kompendium' ,
-[Parameter()] [string]$Intro = 'Dieses Dokument fasst alle Kapitel in einem PDF zusammen.'
-)
-
+param()
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
+$root = Split-Path $PSCommandPath -Parent | Split-Path -Parent
+$source = Join-Path $root 'Kompendium'
 
-# Alle Kapitel in numerischer Reihenfolge sammeln
-$kapitel = Get-ChildItem -File -Filter 'Kapitel_*.md' |
-Where-Object { $_.Name -match '^Kapitel_(\d+)\.md$' } |
-Sort-Object { [int]($Matches[1]) }
+# Regex für "Kapitel <Nr> - <Titel>.md"
+$rx = '^(?<name>Kapitel\s+(?<nr>\d+)\s*-\s*(?<title>.+))\.md$'
 
+# Kapitel einsammeln und numerisch sortieren
+$Kapitel = [System.Collections.ArrayList](Get-ChildItem -Path $source -File -Filter 'Kapitel *.md' -ErrorAction Stop | Where-Object { $_.Name -match $rx } |Sort-Object { [int]([regex]::Match($_.Name, $rx).Groups['nr'].Value) } )
 
-if (-not $kapitel) { throw 'Keine Kapiteldateien gefunden (Kapitel_*.md).' }
+if (-not $Kapitel) {
+    throw "Keine Kapiteldateien gefunden unter '$source' (erwartet: 'Kapitel <Nr> - <Titel>.md')."
+}
 
-
-# Masterdokument zusammenstellen
 $nl = [Environment]::NewLine
 $sb = [System.Text.StringBuilder]::new()
-[void]$sb.AppendLine($Title)
+
+#region Header
+
+$Header = $Kapitel[0] | Get-Content -Raw -Encoding UTF8
+$Kapitel.RemoveAt(0)  # Erstes Kapitel (Übersicht) entfernen, da schon im Header
+[void]$sb.AppendLine($Header)
+
+#endregion
+
+
+
+
+
+
+#region Write TOC
+
+[void]$sb.AppendLine('## Inhaltsverzeichnis')
 [void]$sb.AppendLine()
-[void]$sb.AppendLine($Intro)
-[void]$sb.AppendLine()
-[void]$sb.AppendLine('---')
-[void]$sb.AppendLine()
 
+foreach ($f in $Kapitel) {
+    $title = ($f | Get-Content -TotalCount 1) -replace '^\#\s+', ''
+    
+    $link = $title.ToLower()
+    $link = $link -replace '\&', ''
+    $link = $link -replace '\(', ''
+    $link = $link -replace '\)', ''
+    $link = $link -replace '\/', ''
+    $link = $link -replace '\,', ''
+    $link = $link -replace '\.', ''
+    $link = $link -replace ' ', '-'
 
-foreach ($file in $kapitel) {
-Write-Verbose "Füge hinzu: $($file.Name)"
-$content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
-
-
-# Sicherstellen: H1 bleibt H1, davor Leerzeile
-if (-not $content.StartsWith('# ')) {
-# Wenn das Kapitel kein H1 hat, füge Dateiname als Fallback ein
-$content = "# $($file.BaseName)$nl$nl$content"
+    [void]$sb.AppendLine("- [$title](#$link)")
 }
-
-
-# Trennzeile
-[void]$sb.AppendLine($content.TrimEnd())
 [void]$sb.AppendLine()
-[void]$sb.AppendLine('')
+Write-Host "TOC geschrieben"
+
+#endregion
+
+#region Kapitel zusammenführen
+foreach ($file in $Kapitel) {
+    Write-Verbose "Füge hinzu: $($file.Name)"
+    $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
+    
+    # H1-Fallback, wenn Kapitel ohne H1 startet
+    if (-not $content.StartsWith('# ')) {
+        $base = [regex]::Match($file.BaseName, $rx).Groups['name'].Value
+        $content = "# $base$nl$nl$content"
+    }
+    
+    # --- NEU: Überschrift-Ebenen verschieben ---
+    # jede Markdown-Überschrift (#...) um ein '#' erweitern
+    $content = [regex]::Replace($content, '^(#+)', { "$($args[0].Groups[1].Value)#" }, 'Multiline')
+    
+    # MD012: Mehrfach-Blankzeilen reduzieren
+    $content = [regex]::Replace($content, "($nl){3,}", "$nl$nl")
+    
+    # MD022: Leerzeile vor/nach H1 sicherstellen
+    $content = [regex]::Replace($content, "([^\r\n])$nl## ", "`$1$nl$nl## ")
+    $content = [regex]::Replace($content, "## (.+?)$nl(?!$nl)", "## `$1$nl$nl")
+    
+    $content = $content.TrimEnd()
+    
+    [void]$sb.AppendLine($content)
+    [void]$sb.AppendLine()
 }
+#endregion
 
-
-$sb.ToString() | Set-Content -Path $Output -Encoding UTF8
-Write-Host "Masterdatei geschrieben: $Output"
+# Schreiben
+$Output = 'Kompendium.md'
+$final = $sb.ToString().TrimEnd()
+$final | Set-Content -Path (Join-Path $root $Output) -Encoding UTF8
+Write-Host "Masterdatei geschrieben: $(Join-Path $root $Output)"

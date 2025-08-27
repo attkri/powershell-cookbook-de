@@ -8,8 +8,8 @@ Get-Help -Name 'about_WMI' -ShowWindow
 
 ## 34.1 WMI vs. CIM
 
-* **WMI**: Ältere Technologie, lokal und per DCOM nutzbar.
-* **CIM**: Neuer Standard, basiert auf WS-Man (WinRM), plattformübergreifend.
+- **WMI**: Ältere Technologie, lokal und per DCOM nutzbar.
+- **CIM**: Neuer Standard, basiert auf WS-Man (WinRM), plattformübergreifend.
 
 Empfehlung: Für neue Skripte **CIM** nutzen.
 
@@ -68,10 +68,10 @@ Get-CimInstance Win32_OperatingSystem
 
 ## 34.6 Best Practices
 
-* Für Skripte **CIM-Cmdlets** bevorzugen.
-* Für wiederholte Abfragen CIM-Sessions verwenden.
-* Nur benötigte Eigenschaften abrufen, um Performance zu verbessern.
-* Auf Remotesystemen WinRM aktivieren, falls CIM genutzt wird.
+- Für Skripte **CIM-Cmdlets** bevorzugen.
+- Für wiederholte Abfragen CIM-Sessions verwenden.
+- Nur benötigte Eigenschaften abrufen, um Performance zu verbessern.
+- Auf Remotesystemen WinRM aktivieren, falls CIM genutzt wird.
 
 ```powershell
 # Beispiel: Nur bestimmte Eigenschaften abrufen

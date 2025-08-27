@@ -75,10 +75,10 @@ Invoke-Pester -OutputFormat NUnitXml -OutputFile TestResult.xml
 
 ## 29.6 Best Practices
 
-* Tests immer zusammen mit Code entwickeln (Test-Driven Development bevorzugt).
-* Kleine, fokussierte Tests schreiben.
-* Tests automatisiert in Build-Pipelines einbinden.
-* Auch Fehlerszenarien testen.
+- Tests immer zusammen mit Code entwickeln (Test-Driven Development bevorzugt).
+- Kleine, fokussierte Tests schreiben.
+- Tests automatisiert in Build-Pipelines einbinden.
+- Auch Fehlerszenarien testen.
 
 ```powershell
 # Beispiel für Fehlertest

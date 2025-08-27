@@ -70,10 +70,10 @@ Remove-Item C:\\Temp\\*.bak
 
 ## 20.6 Best Practices
 
-* Immer Pfade überprüfen, bevor Dateien gelöscht oder überschrieben werden.
-* `-WhatIf` nutzen, um Änderungen zu simulieren.
-* Für große Dateien `-ReadCount` bei `Get-Content` einsetzen.
-* Bei Logdateien gezielt `Select-String` statt komplettes Einlesen nutzen.
+- Immer Pfade überprüfen, bevor Dateien gelöscht oder überschrieben werden.
+- `-WhatIf` nutzen, um Änderungen zu simulieren.
+- Für große Dateien `-ReadCount` bei `Get-Content` einsetzen.
+- Bei Logdateien gezielt `Select-String` statt komplettes Einlesen nutzen.
 
 ```powershell
 # Sicheres Löschen testen

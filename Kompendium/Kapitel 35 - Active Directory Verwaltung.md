@@ -86,10 +86,10 @@ Search-ADAccount -LockedOut
 
 ## 35.6 Best Practices
 
-* Änderungen zuerst in Testumgebungen durchführen.
-* Immer mit `-WhatIf` prüfen, bevor produktive Objekte geändert werden.
-* OU-Struktur sauber halten und Namenskonventionen einhalten.
-* Gruppenverschachtelungen vermeiden, um Berechtigungen übersichtlich zu halten.
+- Änderungen zuerst in Testumgebungen durchführen.
+- Immer mit `-WhatIf` prüfen, bevor produktive Objekte geändert werden.
+- OU-Struktur sauber halten und Namenskonventionen einhalten.
+- Gruppenverschachtelungen vermeiden, um Berechtigungen übersichtlich zu halten.
 
 ```powershell
 # Sicher testen

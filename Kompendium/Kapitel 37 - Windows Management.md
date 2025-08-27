@@ -73,10 +73,10 @@ Get-ComputerInfo | Select-Object OSName, OsArchitecture, WindowsVersion
 
 ## 37.5 Best Practices
 
-* Für Updates nur signierte Quellen nutzen.
-* Ereignisprotokolle gezielt filtern, statt alles zu exportieren.
-* Geplante Aufgaben dokumentieren und mit klaren Namen versehen.
-* Services nicht blind stoppen – Abhängigkeiten prüfen.
+- Für Updates nur signierte Quellen nutzen.
+- Ereignisprotokolle gezielt filtern, statt alles zu exportieren.
+- Geplante Aufgaben dokumentieren und mit klaren Namen versehen.
+- Services nicht blind stoppen – Abhängigkeiten prüfen.
 
 ```powershell
 # Beispiel: Nur Fehlereinträge der letzten 24h

@@ -80,11 +80,11 @@ Invoke-Command -ComputerName Server01,Server02,Server03 -ScriptBlock { Get-Compu
 
 ## 17.5 Sicherheit und Best Practices
 
-* Remoting nur über gesicherte Netzwerke verwenden.
-* Authentifizierung per Kerberos (Domäne) oder Zertifikaten bevorzugen.
-* Zugriff nur für Administratoren oder spezielle Servicekonten zulassen.
-* Nach Nutzung Sitzungen schließen und nicht offen lassen.
-* Für plattformübergreifende Szenarien SSH statt WinRM nutzen.
+- Remoting nur über gesicherte Netzwerke verwenden.
+- Authentifizierung per Kerberos (Domäne) oder Zertifikaten bevorzugen.
+- Zugriff nur für Administratoren oder spezielle Servicekonten zulassen.
+- Nach Nutzung Sitzungen schließen und nicht offen lassen.
+- Für plattformübergreifende Szenarien SSH statt WinRM nutzen.
 
 ```powershell
 # Alle aktiven Remote-Sitzungen prüfen und beenden

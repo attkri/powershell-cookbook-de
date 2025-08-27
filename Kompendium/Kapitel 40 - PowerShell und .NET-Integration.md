@@ -79,10 +79,10 @@ $p.Begruessen()
 
 ## 40.6 Best Practices
 
-* .NET nur dort einsetzen, wo Cmdlets nicht ausreichen.
-* Auf Kompatibilität achten: Nicht alle .NET-APIs sind auf allen Plattformen verfügbar.
-* Für wiederkehrende Logik eigene Klassen und Methoden nutzen.
-* Assemblies versionieren und sauber dokumentieren.
+- .NET nur dort einsetzen, wo Cmdlets nicht ausreichen.
+- Auf Kompatibilität achten: Nicht alle .NET-APIs sind auf allen Plattformen verfügbar.
+- Für wiederkehrende Logik eigene Klassen und Methoden nutzen.
+- Assemblies versionieren und sauber dokumentieren.
 
 ```powershell
 # Beispiel: GUID generieren

@@ -4,14 +4,14 @@ Dieses Kompendium führt Schritt für Schritt in PowerShell ein – von den Grun
 
 PowerShell ist mehr als nur eine Skriptsprache – es ist eine **Automatisierungs- und Verwaltungsplattform**. Jeder Themenblock im Kompendium zeigt, wie sich PowerShell als zentrales Werkzeug einsetzen lässt:
 
-* **Grundlagen**: schaffen das Fundament, um Cmdlets, Variablen und Operatoren sicher zu nutzen.
-* **Sprachelemente**: erklären, wie PowerShell als Programmiersprache funktioniert und wie du Logik umsetzt.
-* **Objekte & Pipeline**: zeigen die besondere Stärke von PowerShell – alles sind Objekte, die flexibel weitergereicht werden können.
-* **Fehlerbehandlung & Debugging**: sorgen für stabile Skripte, die auch in produktiven Umgebungen zuverlässig laufen.
-* **Module & Automatisierung**: machen PowerShell skalierbar – von wiederverwendbaren Modulen bis hin zu CI/CD-Pipelines.
-* **Administration**: PowerShell als Werkzeugkasten für IT-Admins – von Datei- und Registryverwaltung über Active Directory bis zu Exchange und Windows Management.
-* **Cross-Plattform & Integration**: zeigen, wie PowerShell über Windows hinaus funktioniert und .NET oder GUIs integriert.
-* **Sicherheit & Best Practices**: helfen, PowerShell verantwortungsvoll und sicher einzusetzen.
+- **Grundlagen**: schaffen das Fundament, um Cmdlets, Variablen und Operatoren sicher zu nutzen.
+- **Sprachelemente**: erklären, wie PowerShell als Programmiersprache funktioniert und wie du Logik umsetzt.
+- **Objekte & Pipeline**: zeigen die besondere Stärke von PowerShell – alles sind Objekte, die flexibel weitergereicht werden können.
+- **Fehlerbehandlung & Debugging**: sorgen für stabile Skripte, die auch in produktiven Umgebungen zuverlässig laufen.
+- **Module & Automatisierung**: machen PowerShell skalierbar – von wiederverwendbaren Modulen bis hin zu CI/CD-Pipelines.
+- **Administration**: PowerShell als Werkzeugkasten für IT-Admins – von Datei- und Registryverwaltung über Active Directory bis zu Exchange und Windows Management.
+- **Cross-Plattform & Integration**: zeigen, wie PowerShell über Windows hinaus funktioniert und .NET oder GUIs integriert.
+- **Sicherheit & Best Practices**: helfen, PowerShell verantwortungsvoll und sicher einzusetzen.
 
 Damit wird klar: PowerShell ist nicht nur eine Sammlung von Befehlen, sondern ein **ganzheitliches Framework für Administration, Automatisierung und Entwicklung**.
 

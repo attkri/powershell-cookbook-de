@@ -4,9 +4,9 @@ Eine saubere Arbeitsweise mit PowerShell erleichtert Wartung, Lesbarkeit und Sic
 
 ## 42.1 Namenskonventionen
 
-* Cmdlets im **Verb-Noun**-Format (z. B. `Get-Report`, `Set-Config`).
-* Funktions- und Variablennamen klar und sprechend wählen.
-* Nur englische Typnamen im Code (z. B. `[string]`, `[int]`).
+- Cmdlets im **Verb-Noun**-Format (z. B. `Get-Report`, `Set-Config`).
+- Funktions- und Variablennamen klar und sprechend wählen.
+- Nur englische Typnamen im Code (z. B. `[string]`, `[int]`).
 
 ```powershell
 function Get-UserReport {
@@ -17,9 +17,9 @@ function Get-UserReport {
 
 ## 42.2 Kommentare & Dokumentation
 
-* Jede Funktion kurz beschreiben.
-* Parameter mit `[Parameter()]` und Attributen dokumentieren.
-* Bei komplexeren Skripten Header-Kommentare verwenden.
+- Jede Funktion kurz beschreiben.
+- Parameter mit `[Parameter()]` und Attributen dokumentieren.
+- Bei komplexeren Skripten Header-Kommentare verwenden.
 
 ```powershell
 <#!
@@ -33,9 +33,9 @@ function Get-UserReport { ... }
 
 ## 42.3 Fehlerbehandlung
 
-* Immer terminierende Fehler mit `-ErrorAction Stop` erzwingen.
-* `try/catch` nur einsetzen, wenn sinnvoll behandelt werden kann.
-* Eigene Fehler mit `throw` oder `Write-Error` erzeugen.
+- Immer terminierende Fehler mit `-ErrorAction Stop` erzwingen.
+- `try/catch` nur einsetzen, wenn sinnvoll behandelt werden kann.
+- Eigene Fehler mit `throw` oder `Write-Error` erzeugen.
 
 ```powershell
 try {
@@ -48,9 +48,9 @@ catch {
 
 ## 42.4 Sicherheit
 
-* Keine Passwörter im Klartext speichern.
-* Für Secrets den **SecretManagement**-Modul oder Credential Manager nutzen.
-* Execution Policy sinnvoll setzen (`RemoteSigned` oder `AllSigned`).
+- Keine Passwörter im Klartext speichern.
+- Für Secrets den **SecretManagement**-Modul oder Credential Manager nutzen.
+- Execution Policy sinnvoll setzen (`RemoteSigned` oder `AllSigned`).
 
 ```powershell
 # Secret sicher ablegen
@@ -60,9 +60,9 @@ Set-Secret -Name ApiUser -Secret $cred
 
 ## 42.5 Performance
 
-* Nur benötigte Eigenschaften abfragen (`Select-Object`).
-* Bei großen Datenmengen Pipelines nutzen.
-* Wo möglich parallele Ausführung (Jobs, ForEach-Object -Parallel).
+- Nur benötigte Eigenschaften abfragen (`Select-Object`).
+- Bei großen Datenmengen Pipelines nutzen.
+- Wo möglich parallele Ausführung (Jobs, ForEach-Object -Parallel).
 
 ```powershell
 # Nur benötigte Felder abrufen
@@ -71,9 +71,9 @@ Get-Process | Select-Object Name, CPU
 
 ## 42.6 Code-Qualität
 
-* Einheitliche Einrückung (4 Leerzeichen).
-* Linter wie **PSScriptAnalyzer** verwenden.
-* Skripte mit Git versionieren.
+- Einheitliche Einrückung (4 Leerzeichen).
+- Linter wie **PSScriptAnalyzer** verwenden.
+- Skripte mit Git versionieren.
 
 ```powershell
 # Skriptanalyse starten
@@ -82,8 +82,8 @@ Invoke-ScriptAnalyzer -Path .\MeinSkript.ps1
 
 ## 42.7 Best Practices zusammengefasst
 
-* Klares Cmdlet-Schema (Verb-Noun) nutzen.
-* Fehlerbehandlung bewusst einsetzen.
-* Security by Default – keine Klartext-Passwörter.
-* Performance im Blick behalten.
-* Einheitliche Code-Standards und Versionskontrolle einhalten.
+- Klares Cmdlet-Schema (Verb-Noun) nutzen.
+- Fehlerbehandlung bewusst einsetzen.
+- Security by Default – keine Klartext-Passwörter.
+- Performance im Blick behalten.
+- Einheitliche Code-Standards und Versionskontrolle einhalten.

@@ -64,10 +64,10 @@ Import-Csv C:\\Temp\\Personen.csv | ConvertTo-Json -Depth 3
 
 ## 33.5 Best Practices
 
-* Für APIs JSON bevorzugen, für Tabellenberichte CSV.
-* Bei JSON `-Depth` beachten, da verschachtelte Strukturen sonst abgeschnitten werden.
-* CSV-Export immer mit `-NoTypeInformation` nutzen.
-* XML nur verwenden, wenn zwingend notwendig (z. B. für Legacy-Systeme).
+- Für APIs JSON bevorzugen, für Tabellenberichte CSV.
+- Bei JSON `-Depth` beachten, da verschachtelte Strukturen sonst abgeschnitten werden.
+- CSV-Export immer mit `-NoTypeInformation` nutzen.
+- XML nur verwenden, wenn zwingend notwendig (z. B. für Legacy-Systeme).
 
 ```powershell
 # Beispiel: JSON-Ergebnis sichern

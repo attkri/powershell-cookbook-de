@@ -17,7 +17,7 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 
 ## Ist-Zustand
 
-- Alles liegt unter https://github.com/attkri/powershell-cookbook-de
+- Alles liegt unter `https://github.com/attkri/powershell-cookbook-de`
 - Jedes Kapitel liegt unter ./Kompendium/ einzeln als `.md`-Datei (`Kapitel <Nr> - <Titel>.md`).
 - Repository wird in VS Code bearbeitet.
 - Branch `main` ist der Arbeitsstand.
@@ -33,7 +33,6 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 │   └─ settings.json
 ├─ Archiv\                                            # Nur Offline
 ├─ Kompendium\
-│   ├─ .TOC.md
 │   ├─ Kapitel 1 - Einführung & Überblick.md
 │   ├─ Kapitel 2 - Tools zur & für PowerShell.md
 │   ├─ <usw.>
@@ -114,7 +113,8 @@ Die folgenden Regeln gelten für alle Markdown-Ausgaben in diesem Chat.
 - **MD040 / fenced-code-language**: Codeblöcke immer mit Sprache (z. B. \`\`\`powershell).
 - **MD012 / no-multiple-blanks**: Keine doppelten Leerzeilen.
 - Keine `---` Trenner verwenden (Ausnahme: Kapitel 1 Übersicht).
-- Das Sonderzeichen `–` nicht benutzen sondern `-` ersetzen.
+- Das Sonderzeichen `–` in Markdown nicht benutzen sondern `-` verwenden.
+- Aufzählungen immer mit '-' beginnen.
 
 ### Kapitel-Regen
 

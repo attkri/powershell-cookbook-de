@@ -77,9 +77,9 @@ Set-Service -Name wuauserv -StartupType Automatic
 
 ## 22.6 Best Practices
 
-* Prozesse und Dienste nie blind beenden – mögliche Abhängigkeiten prüfen.
-* Administrative Rechte beachten: manche Dienste erfordern erhöhte Privilegien.
-* Für wiederkehrende Verwaltung Skripte nutzen, statt manuell zu arbeiten.
+- Prozesse und Dienste nie blind beenden – mögliche Abhängigkeiten prüfen.
+- Administrative Rechte beachten: manche Dienste erfordern erhöhte Privilegien.
+- Für wiederkehrende Verwaltung Skripte nutzen, statt manuell zu arbeiten.
 
 ```powershell
 # Beispiel: Alle gestoppten Dienste starten

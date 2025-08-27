@@ -10,8 +10,8 @@ Get-Help -Name 'about_JEA' -ShowWindow
 
 Mit JEA kannst du sogenannte Endpoints definieren, über die Benutzer eingeschränkte PowerShell-Sitzungen starten. Diese Sitzungen enthalten nur die erlaubten Cmdlets, Funktionen oder Skripte.
 
-* Prinzip: **Least Privilege** – nur die notwendigen Rechte
-* Vorteile: Weniger Angriffsfläche, kontrollierte Administration
+- Prinzip: **Least Privilege** – nur die notwendigen Rechte
+- Vorteile: Weniger Angriffsfläche, kontrollierte Administration
 
 ## 38.2 Role Capabilities
 
@@ -51,10 +51,10 @@ Enter-PSSession -ComputerName Server01 -ConfigurationName JEA-HelpDesk
 
 ## 38.5 Best Practices
 
-* JEA für Rollen wie Helpdesk, Support oder Operator nutzen.
-* Nur die nötigsten Cmdlets und Funktionen freigeben.
-* Session Configurations versionieren und dokumentieren.
-* JEA-Endpunkte regelmäßig überprüfen und anpassen.
+- JEA für Rollen wie Helpdesk, Support oder Operator nutzen.
+- Nur die nötigsten Cmdlets und Funktionen freigeben.
+- Session Configurations versionieren und dokumentieren.
+- JEA-Endpunkte regelmäßig überprüfen und anpassen.
 
 ```powershell
 # Verfügbare JEA-Endpoints anzeigen

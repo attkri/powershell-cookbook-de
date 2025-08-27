@@ -75,10 +75,10 @@ git pull origin main
 
 ## 28.6 Best Practices
 
-* Häufig committen mit aussagekräftigen Nachrichten.
-* Branches für Features und Bugfixes nutzen.
-* Pull Requests für Code-Reviews einsetzen.
-* `.gitignore` nutzen, um unnötige Dateien auszuschließen.
+- Häufig committen mit aussagekräftigen Nachrichten.
+- Branches für Features und Bugfixes nutzen.
+- Pull Requests für Code-Reviews einsetzen.
+- `.gitignore` nutzen, um unnötige Dateien auszuschließen.
 
 ```powershell
 # Beispiel für .gitignore

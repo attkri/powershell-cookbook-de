@@ -74,10 +74,10 @@ Enable-Mailbox -Identity mmustermann -Archive
 
 ## 36.6 Best Practices
 
-* In Office 365 immer moderne Authentifizierung verwenden.
-* Cmdlets regelmäßig in der Doku prüfen, da sich Online-Module schnell ändern.
-* Skripte für Massenänderungen nutzen, statt GUI.
-* Nach größeren Änderungen Postfach-Statistiken prüfen.
+- In Office 365 immer moderne Authentifizierung verwenden.
+- Cmdlets regelmäßig in der Doku prüfen, da sich Online-Module schnell ändern.
+- Skripte für Massenänderungen nutzen, statt GUI.
+- Nach größeren Änderungen Postfach-Statistiken prüfen.
 
 ```powershell
 # Beispiel: Alle Postfächer mit Archiv

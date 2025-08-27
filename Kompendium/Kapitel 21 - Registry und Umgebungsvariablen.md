@@ -71,10 +71,10 @@ Add-Content -Path $PROFILE -Value "$env:MeineVar = 'Persistent'"
 
 ## 21.6 Best Practices
 
-* Änderungen an Registry und Variablen nur mit Bedacht durchführen.
-* Immer Backups oder Wiederherstellungspunkte bereithalten.
-* Für Tests besser Session-Variablen statt Registry nutzen.
-* Änderungen an PATH und kritischen Variablen sorgfältig prüfen.
+- Änderungen an Registry und Variablen nur mit Bedacht durchführen.
+- Immer Backups oder Wiederherstellungspunkte bereithalten.
+- Für Tests besser Session-Variablen statt Registry nutzen.
+- Änderungen an PATH und kritischen Variablen sorgfältig prüfen.
 
 ```powershell
 # Vorsichtiger Test
