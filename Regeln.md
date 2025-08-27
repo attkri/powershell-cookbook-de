@@ -43,10 +43,11 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 │   ├─ Pandoc.ps1                                     # Code Schnippsel
 │   ├─ PandocDefaultOptionSettings.yaml
 │   └─ Worker.ps1                                
-└─ .gitignore
-├─ Regeln.md                      # Dieses Dokument
-REASDME # Projektbeschreibung (noch zu ergänzen)
-LIZENZ
+├─ .gitignore
+├─ License.md                                         # CC BY-NC 4.0 und MIT für Code
+├─ README.md                                          # Projektbeschreibung
+├─ Regeln.md                                          # Dieses Dokument
+└─ ToDo.md                                            # Ideen, Neue Themen, Aufgaben
 ```
 
 ### Inhaltsverzeichnis
