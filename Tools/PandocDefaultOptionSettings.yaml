@@ -3,12 +3,12 @@ dpi: 600
 table-of-contents: true
 toc-depth: 3
 number-sections: false # aktiviert die Nummerierung vor den jeweiligen Überschriften 
-highlight-style: tango # zenburn, tango, espresso | NOGO: pygments, kate, monochrome, breezedark, haddock
+highlight-style: tango # zenburn, tango, espresso | NOGO: pygments, kate, monochrome, breezedark, haddock s.a.: Pandoc --list-highlight-styles
 verbosity: WARNING # INFO | WARNING | ERROR
 fail-if-warnings: true
 
-resource-path:
-  - C:\Users\Attila\OneDrive\Wissen\PowerShell\Internal
+# resource-path:
+#   - C:\Users\Attila\OneDrive\Wissen\PowerShell\Internal
 
 metadata:
 

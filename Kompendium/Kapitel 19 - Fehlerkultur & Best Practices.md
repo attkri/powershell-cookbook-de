@@ -54,7 +54,7 @@ catch {
 - Logging einbauen, um Abläufe nachvollziehbar zu machen.
 - Fehler nicht verschweigen – lieber sauber melden und ggf. abbrechen.
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Try_Catch_Finally' -ShowWindow

@@ -15,5 +15,5 @@ Es ist als Nachschlagewerk für Einsteiger:innen und Fortgeschrittene gedacht, d
 - **Kapitelweise** als Nachschlagewerk zu bestimmten Themen.  
 - **Interaktiv**: Viele Beispiele lassen sich direkt in einer PowerShell-Sitzung ausprobieren.
 
-> 💡 **Hinweis:** Dieses Dokument ersetzt keine offizielle Microsoft-Dokumentation.  
+> **Hinweis:** Dieses Dokument ersetzt keine offizielle Microsoft-Dokumentation.  
 > Es versteht sich als praxisnaher Leitfaden, der typische Aufgaben bündelt und anwendbar macht.

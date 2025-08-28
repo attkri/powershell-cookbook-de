@@ -13,7 +13,8 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 - **Praxisorientiert** → Kochrezept-Stil  
 - **Keine Redundanz**: doppelte Inhalte streichen, bei Bedarf Querverweise setzen  
 - **Kein zusätzliches Meta-Wissen nötig**: alle wichtigen Infos direkt als Kommentar im Code. Hintergrundinfos optional am Kapitelende.  
-- Es wird mit **PowerShell 7.5** und **Visual Studio Code** gearbeitet.  
+- Es wird mit **PowerShell 7.5** und **Visual Studio Code** gearbeitet.
+- **Keine Emoji's**, 'Ungleichzeichen', "Box Drawing"-Zeichen verwenden wegen der Druckerei und SW-Druck.
 
 ## Ist-Zustand
 
@@ -28,7 +29,6 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 / (Root)
 ├─ .github
 │   └─ workflows
-│       └─ build-kompendium-pdf.yml                   # GitHub Actions Workflow baut bei Push/Release ein PDF.
 ├─ .vscode
 │   └─ settings.json
 ├─ Archiv\                                            # Nur Offline
@@ -39,10 +39,11 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 │   └─ Kapitel 42 - Best Practices & Standards.md
 ├─ Tools/
 │   ├─ Build-Kompendium.ps1                           # Script zum Bauen des Masterdokuments
-│   ├─ Pandoc.ps1                                     # Code Schnippsel zum Thema Pandoc
 │   ├─ PandocDefaultOptionSettings.yaml
 ├─ .gitignore
 ├─ License.md                                         # CC BY-NC 4.0 und MIT für Code
+├─ Kompendium.md                                      # Die Zusammengeführten Kapitel (Build-Kompendium.ps1)
+├─ Kompendium.pdf                                     # Kompendium.md in PDF umgewandelt mit Pandoc über Build-Kompendium.ps1
 ├─ README.md                                          # Projektbeschreibung
 ├─ Regeln.md                                          # Dieses Dokument
 └─ ToDo.md                                            # Ideen, Neue Themen, Aufgaben
@@ -50,6 +51,7 @@ Es ersetzt ältere Regelwerke vollständig und dient als Referenz für zukünfti
 
 ### Inhaltsverzeichnis
 
+- [PowerShell meistern — Kompendium](Kapitel 0 - Kompendium.md)
 - [1. Einführung & Überblick](Kapitel 1 - Einführung & Überblick.md)
 - [2. Tools für PowerShell](Kapitel 2 - Tools zur & für PowerShell.md)
 - [3. Hilfe-System](Kapitel 3 - Hilfe-System.md)
@@ -133,7 +135,7 @@ Kurze Beschreibung, warum/wie man es einsetzt.
 
 <Beispiel_Code_mit_Kommentaren>
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 <Weitere_Hinweise>
 

@@ -43,7 +43,7 @@ $b.GetType()        # System.String
 [bool]1              # True
 ```
 
-👉 Manche Umwandlungen schlagen fehl:
+Manche Umwandlungen schlagen fehl:
 
 ```powershell
 [int]"abc"           # Fehler
@@ -80,7 +80,7 @@ $p.Kill()        # Prozess beenden
 ## 4.6 Besonderheiten von Null und `$null`
 
 `$null` steht für **kein Wert**.  
-👉 **Best Practice:** `$null` immer links im Vergleich schreiben.  
+**Best Practice:** `$null` immer links im Vergleich schreiben.  
 
 ```powershell
 $a = $null
@@ -88,7 +88,7 @@ $null -eq $a     # True
 $a -eq $null     # True (funktioniert, aber schlechter Stil)
 
 $a = ""
-$null -eq $a     # False (leer ≠ null)
+$null -eq $a     # False (leer -ne null)
 ```
 
 ## 4.7 Operatoren für Typprüfung und Casting

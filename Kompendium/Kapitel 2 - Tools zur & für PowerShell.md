@@ -15,7 +15,7 @@ Sie ist optimiert für Programmierung und sorgt für bessere Lesbarkeit in Power
 Start-Process "C:\Program Files\PowerShell\7\pwsh.exe"
 ```
 
-💡 Tipp: Nutze [Windows Terminal](https://github.com/microsoft/terminal), um PowerShell, CMD & Bash in Tabs oder Splits zu verwenden.
+**Tipp:** Nutze [Windows Terminal](https://github.com/microsoft/terminal), um PowerShell, CMD & Bash in Tabs oder Splits zu verwenden.
 
 ### Tastaturbefehle
 
@@ -63,7 +63,7 @@ Get-ScriptAnalyzerRule
 Invoke-Formatter -ScriptDefinition $definition
 ```
 
-💡 In VSCode sind Regelverstöße direkt im *Problems*-Fenster sichtbar.
+In VSCode sind Regelverstöße direkt im *Problems*-Fenster sichtbar.
 
 ## 2.4 Visual Studio Code
 
@@ -75,14 +75,14 @@ Empfohlen als Editor (Nachfolger der ISE)
 | ------------------ | ------------------------------------------------------------------------------------ | ------------------------------- |
 | PowerShell         | ms-vscode.powershell                                                                 | PowerShell (.PS1) Integration   |
 | Better Comments    | aaron-bond.better-comments                                                           | Kommentare farblich hervorheben |
-| Code Spell Checker | streetsidesoftware.code-spell-checker + streetsidesoftware.code-spell-checker-german | Rechtschreibprüfung (EN/DE)     |
+| Code Spell Checker | streetsidesoftware.code-spell-checker + streetsidesoftware.code-spell-checker-german | Rechtschreibkorrektur (EN/DE)   |
 
 ### Optionale Extensions
 
 | Titel                   | ID                                | Beschreibung                           |
 | ----------------------- | --------------------------------- | -------------------------------------- |
 | Markdown All in One     | yzhang.markdown-all-in-one        | Markdown (.md) Integration             |
-| Markdown PDF            | yzane.markdown-pdf                | Markdown → PDF Export                  |
+| Markdown PDF            | yzane.markdown-pdf                | Markdown ? PDF Export                  |
 | MarkdownLint            | davidanson.vscode-markdownlint    | Markdown Style-Checking                |
 | XML Tools               | dotjoshjohnson.xml                | XML Integration                        |
 | Vscode Google Translate | funkyremi.vscode-google-translate | Übersetzungstool                       |
@@ -103,7 +103,7 @@ Empfohlen als Editor (Nachfolger der ISE)
 | Zeile nach unten verschieben     | ALT+DOWN       |
 | Zeile(n) ein-/auskommentieren    | CTRL+#         |
 
-💡 Alle Keybindings sind in `keybindings.json` anpassbar.
+Alle Keybindings sind in `keybindings.json` anpassbar.
 
 ## 2.5 Windows Terminal
 
@@ -127,9 +127,9 @@ Empfohlen als Editor (Nachfolger der ISE)
 
 Nicht mehr aktiv entwickelt, nur noch für alte Skripte relevant.  
 
-💡 Empfehlung: **VSCode mit PowerShell-Extension**.
+Empfehlung: **VSCode mit PowerShell-Extension**.
 
 ## 2.8 Weitere Tools
 
-- [CryptPad](https://cryptpad.fr) → kollaboratives Arbeiten  
-- [RegEx101](https://regex101.com) → Regex testen
+- [CryptPad](https://cryptpad.fr) ? kollaboratives Arbeiten  
+- [RegEx101](https://regex101.com) ? Regex testen

@@ -1,17 +1,25 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param()
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$root = Split-Path $PSCommandPath -Parent | Split-Path -Parent
-$source = Join-Path $root 'Kompendium'
+function Install-Pandoc {
+    winget install --id JohnMacFarlane.Pandoc
+    winget install MiKTeX
+}
+
+#region Vorbereitung
+
+Remove-Item -Path '.\Kompendium.log', '.\Kompendium.pdf' -Force -ErrorAction Ignore
+
+$source = '.\Kompendium'
 
 # Regex für "Kapitel <Nr> - <Titel>.md"
 $rx = '^(?<name>Kapitel\s+(?<nr>\d+)\s*-\s*(?<title>.+))\.md$'
 
 # Kapitel einsammeln und numerisch sortieren
-$Kapitel = [System.Collections.ArrayList](Get-ChildItem -Path $source -File -Filter 'Kapitel *.md' -ErrorAction Stop | Where-Object { $_.Name -match $rx } |Sort-Object { [int]([regex]::Match($_.Name, $rx).Groups['nr'].Value) } )
+$Kapitel = [System.Collections.ArrayList](Get-ChildItem -Path $source -File -Filter 'Kapitel *.md' -ErrorAction Stop | Where-Object { $_.Name -match $rx } | Sort-Object { [int]([regex]::Match($_.Name, $rx).Groups['nr'].Value) } )
 
 if (-not $Kapitel) {
     throw "Keine Kapiteldateien gefunden unter '$source' (erwartet: 'Kapitel <Nr> - <Titel>.md')."
@@ -19,40 +27,20 @@ if (-not $Kapitel) {
 
 $nl = [Environment]::NewLine
 $sb = [System.Text.StringBuilder]::new()
+"Vorbereitung abgeschlossen" | Write-Host -ForegroundColor Cyan
+#endregion
 
-#region Header
+#region Header einfügen
 
 $Header = $Kapitel[0] | Get-Content -Raw -Encoding UTF8
 $Kapitel.RemoveAt(0)  # Erstes Kapitel (Übersicht) entfernen, da schon im Header
 [void]$sb.AppendLine($Header)
-
-#endregion
-
-#region Write TOC
-
-[void]$sb.AppendLine('## Inhaltsverzeichnis')
-[void]$sb.AppendLine()
-
-foreach ($f in $Kapitel) {
-    $title = ($f | Get-Content -TotalCount 1) -replace '^\#\s+', ''
-    
-    $link = $title.ToLower()
-    $link = $link -replace '\&', ''
-    $link = $link -replace '\(', ''
-    $link = $link -replace '\)', ''
-    $link = $link -replace '\/', ''
-    $link = $link -replace '\,', ''
-    $link = $link -replace '\.', ''
-    $link = $link -replace ' ', '-'
-
-    [void]$sb.AppendLine("- [$title](#$link)")
-}
-[void]$sb.AppendLine()
-Write-Host "TOC geschrieben"
+"Header angefügt" | Write-Host -ForegroundColor Cyan
 
 #endregion
 
 #region Kapitel zusammenführen
+
 foreach ($file in $Kapitel) {
     Write-Verbose "Füge hinzu: $($file.Name)"
     $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
@@ -79,10 +67,30 @@ foreach ($file in $Kapitel) {
     [void]$sb.AppendLine($content)
     [void]$sb.AppendLine()
 }
+"Kapitel zusammenführen" | Write-Host -ForegroundColor Cyan
 #endregion
 
-# Schreiben
-$Output = 'Kompendium.md'
+#region Schreiben Kompendium.md
+
 $final = $sb.ToString().TrimEnd()
-$final | Set-Content -Path (Join-Path $root $Output) -Encoding UTF8
-Write-Host "Masterdatei geschrieben: $(Join-Path $root $Output)"
+$final | Set-Content -Path '.\Kompendium.md' -Encoding UTF8
+"Kompendium.md geschrieben" | Write-Host -ForegroundColor Cyan
+
+#endregion
+
+#region PDF mit Pandoc erzeugen
+
+'Starte Kompendium.pdf erzeugen ...' | Write-Host -ForegroundColor Cyan
+Start-Sleep -Seconds 2 # Warte auf Dateisystem
+Pandoc.exe .\Kompendium.md --output=.\Kompendium.pdf --defaults=.\Tools\PandocDefaultOptionSettings.yaml -V block-headings --log .\Kompendium.log
+'... Kompendium.pdf geschrieben' | Write-Host -ForegroundColor Cyan
+
+#endregion
+
+<#
+Pandoc --list-highlight-languages
+
+#>
+
+
+

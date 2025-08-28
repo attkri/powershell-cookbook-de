@@ -17,7 +17,7 @@ Ausführen:
 ./Hallo.ps1
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Scripts -ShowWindow
@@ -32,7 +32,7 @@ Get-ExecutionPolicy
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Execution_Policies -ShowWindow
@@ -56,7 +56,7 @@ Aufruf:
 ./Hallo.ps1 -Name Attila
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Parameters -ShowWindow
@@ -79,4 +79,4 @@ Aufruf:
 ./Quadrat.ps1 -Zahl 5   # 25
 ```
 
-👉 **Best Practice:** Skripte immer mit Parametern schreiben und keine festen Werte im Code verwenden – macht sie wiederverwendbar.
+**Best Practice:** Skripte immer mit Parametern schreiben und keine festen Werte im Code verwenden – macht sie wiederverwendbar.

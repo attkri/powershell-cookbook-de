@@ -15,51 +15,59 @@ PowerShell ist mehr als nur eine Skriptsprache – es ist eine **Automatisierung
 
 Damit wird klar: PowerShell ist nicht nur eine Sammlung von Befehlen, sondern ein **ganzheitliches Framework für Administration, Automatisierung und Entwicklung**.
 
-## Überblick als Strukturbaum
+## 1.1 Überblick als Strukturbaum
 
-```text
-Einführung & Überblick
-│
-├─ Grundlagen
-│   ├─ Tools & Hilfe-System
-│   ├─ Datentypen & Variablen
-│   └─ Operatoren
-│
-├─ Sprachelemente
-│   ├─ Bedingungen
-│   ├─ Schleifen
-│   ├─ Funktionen
-│   └─ Skripte
-│
-├─ Objekte & Pipeline
-│   ├─ Objekte verstehen
-│   └─ Pipeline
-│
-├─ Fehler & Debugging
-│   ├─ Fehlerbehandlung
-│   └─ Debugging
-│
-├─ Module & Automatisierung
-│   ├─ Module & Funktionen
-│   ├─ Remoting & Jobs
-│   ├─ Paketmanagement & Gallery
-│   ├─ CI/CD & Scheduler
-│   └─ Tests mit Pester
-│
-├─ Administration
-│   ├─ Dateien & Registry
-│   ├─ Prozesse & Netzwerk
-│   ├─ Active Directory & Exchange
-│   ├─ Windows Management
-│   └─ JEA
-│
-├─ Cross-Plattform & Integration
-│   ├─ Linux & Mac
-│   ├─ .NET-Integration
-│   └─ GUI-Tools
-│
-└─ Sicherheit & Standards
-    ├─ Signaturen
-    ├─ Profile & PSReadLine
-    └─ Best Practices
+- Grundlagen
+  - Tools & Hilfe-System
+  - Datentypen & Variablen
+  - Operatoren
+
+- Sprachelemente
+  - Bedingungen
+  - Schleifen
+  - Funktionen
+  - Skripte
+
+- Objekte & Pipeline
+  - Objekte verstehen
+  - Pipeline
+
+- Fehler & Debugging
+  - Fehlerbehandlung
+  - Debugging
+
+- Module & Automatisierung
+  - Module & Funktionen
+  - Remoting & Jobs
+  - Paketmanagement & Gallery
+  - CI/CD & Scheduler
+  - Tests mit Pester
+
+- Administration
+  - Dateien & Registry
+  - Prozesse & Netzwerk
+  - Active Directory & Exchange
+  - Windows Management
+  - JEA
+
+- Cross-Plattform & Integration
+  - Linux & Mac
+  - .NET-Integration
+  - GUI-Tools
+
+- Sicherheit & Standards
+  - Signaturen
+  - Profile & PSReadLine
+  - Best Practices
+
+## 1.2 Voraussetzungen und Setup (kurz)
+
+- PowerShell 7.5 oder neuer
+- Visual Studio Code mit PowerShell-Extension.
+
+Version prüfen:
+
+```powershell
+$PSVersionTable.PSVersion
+code --version
 ```

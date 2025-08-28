@@ -12,7 +12,7 @@ for ($i = 1; $i -le 5; $i++) {
 }
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_For -ShowWindow
@@ -29,7 +29,7 @@ foreach ($element in $liste) {
 }
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Foreach -ShowWindow
@@ -47,7 +47,7 @@ while ($i -le 3) {
 }
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_While -ShowWindow
@@ -65,7 +65,7 @@ do {
 } while ($i -le 3)
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Do -ShowWindow
@@ -83,7 +83,7 @@ do {
 } until ($i -gt 3)
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Do -ShowWindow
@@ -101,11 +101,11 @@ for ($i = 1; $i -le 5; $i++) {
 }
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Break -ShowWindow
 Get-Help -Name about_Continue -ShowWindow
 ```
 
-👉 **Best Practice:** `foreach` bevorzugen, wenn Objekte direkt aus der Pipeline verarbeitet werden – übersichtlicher und sicherer.
+**Best Practice:** `foreach` bevorzugen, wenn Objekte direkt aus der Pipeline verarbeitet werden – übersichtlicher und sicherer.

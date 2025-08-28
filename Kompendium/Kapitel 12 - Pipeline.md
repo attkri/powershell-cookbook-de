@@ -8,7 +8,7 @@ Die Pipeline (`|`) verbindet Befehle, sodass die Ausgabe des einen als Eingabe f
 Get-Process | Sort-Object CPU -Descending
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Pipelines -ShowWindow
@@ -23,7 +23,7 @@ Get-Process |
     Select-Object -First 5
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Where -ShowWindow
@@ -35,7 +35,7 @@ Get-Help -Name about_Where -ShowWindow
 Get-Service | Format-Table Name, Status
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Format.ps1xml -ShowWindow
@@ -47,10 +47,10 @@ Get-Help -Name about_Format.ps1xml -ShowWindow
 Get-Process | Export-Csv -Path Prozesse.csv -NoTypeInformation
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Export-Csv -ShowWindow
 ```
 
-👉 **Best Practice:** In Pipelines immer zuerst filtern (`Where-Object`), dann sortieren (`Sort-Object`), und zuletzt formatieren oder exportieren – für bessere Performance und Übersicht.
+**Best Practice:** In Pipelines immer zuerst filtern (`Where-Object`), dann sortieren (`Sort-Object`), und zuletzt formatieren oder exportieren – für bessere Performance und Übersicht.

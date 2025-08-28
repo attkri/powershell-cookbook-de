@@ -14,7 +14,7 @@ function Hallo {
 Hallo
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Functions -ShowWindow
@@ -33,7 +33,7 @@ function Begruessung {
 Begruessung -Name "Attila"
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name about_Parameters -ShowWindow
@@ -52,7 +52,7 @@ function Quadrat {
 Quadrat -Zahl 4   # 16
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name about_Return -ShowWindow
@@ -77,10 +77,10 @@ function Get-Quadrat {
 1..5 | Get-Quadrat
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name about_Functions_Advanced -ShowWindow
 ```
 
-👉 **Best Practice:** Für wiederverwendbaren Code immer Funktionen schreiben – mit klaren Parameternamen und nach Möglichkeit Pipeline-Unterstützung.
+**Best Practice:** Für wiederverwendbaren Code immer Funktionen schreiben – mit klaren Parameternamen und nach Möglichkeit Pipeline-Unterstützung.

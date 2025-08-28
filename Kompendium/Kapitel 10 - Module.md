@@ -10,7 +10,7 @@ Ein Modul kann mit **Import-Module** geladen werden.
 Import-Module Microsoft.PowerShell.Management
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name Import-Module -ShowWindow
@@ -24,7 +24,7 @@ Neue Module können aus der PowerShell Gallery installiert werden.
 Install-Module -Name Pester -Scope CurrentUser
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Install-Module -ShowWindow
@@ -36,7 +36,7 @@ Get-Help -Name Install-Module -ShowWindow
 Get-Module -ListAvailable
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Get-Module -ShowWindow
@@ -54,10 +54,10 @@ function Hallo {
 Export-ModuleMember -Function Hallo
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Export-ModuleMember -ShowWindow
 ```
 
-👉 **Best Practice:** Eigene Funktionen in Modulen organisieren – erleichtert Wiederverwendung und Verteilung.
+**Best Practice:** Eigene Funktionen in Modulen organisieren – erleichtert Wiederverwendung und Verteilung.

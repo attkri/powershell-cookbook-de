@@ -13,7 +13,7 @@ Get-Error -Newest 1
 Get-ChildItem C:\NoDir -ErrorAction Stop
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Preference_Variables' -ShowWindow
@@ -57,7 +57,7 @@ Get-Process | Out-Null
 Get-Process > $null
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_CommonParameters' -ShowWindow
@@ -92,7 +92,7 @@ ping.exe 127.0.0.1 > $null
 $LASTEXITCODE
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Automatic_Variables' -ShowWindow
@@ -123,7 +123,7 @@ finally {
 }
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Try_Catch_Finally' -ShowWindow
@@ -152,7 +152,7 @@ param(
 )
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Throw' -ShowWindow

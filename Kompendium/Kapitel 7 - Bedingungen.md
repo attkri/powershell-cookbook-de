@@ -38,7 +38,7 @@ else {
 }
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_If -ShowWindow
@@ -55,10 +55,10 @@ switch ($wert) {
 }
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Switch -ShowWindow
 ```
 
-👉 **Best Practice:** Switch nutzen, wenn viele Vergleiche nötig sind – übersichtlicher als viele `elseif`.
+**Best Practice:** Switch nutzen, wenn viele Vergleiche nötig sind – übersichtlicher als viele `elseif`.

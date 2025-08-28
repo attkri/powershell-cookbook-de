@@ -24,7 +24,7 @@ Receive-Job -Id 1
 Remove-Job -Id 1
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Jobs' -ShowWindow
@@ -45,7 +45,7 @@ Get-Job
 Receive-Job -Id 2
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Remote_Jobs' -ShowWindow
@@ -66,7 +66,7 @@ Get-Job
 Receive-Job -Id 3
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Thread_Jobs' -ShowWindow
@@ -84,7 +84,7 @@ Mit PowerShell 7 lässt sich die Pipeline direkt parallelisieren. So können gro
 }
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'ForEach-Object' -ShowWindow

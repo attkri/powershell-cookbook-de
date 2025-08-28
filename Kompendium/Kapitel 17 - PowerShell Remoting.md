@@ -21,7 +21,7 @@ Enter-PSSession -ComputerName Server01
 Invoke-Command -ComputerName Server01 -ScriptBlock { Get-Process }
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Remote' -ShowWindow
@@ -45,7 +45,7 @@ Get-PSSession
 Remove-PSSession $session
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_PSSessions' -ShowWindow
@@ -63,7 +63,7 @@ Enter-PSSession -HostName server01.contoso.com -UserName admin
 Invoke-Command -HostName server01.contoso.com -UserName admin -ScriptBlock { hostname }
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Remote' -ShowWindow

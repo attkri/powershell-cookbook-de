@@ -8,7 +8,7 @@ In PowerShell ist fast alles ein Objekt. Objekte haben **Eigenschaften** (Daten)
 Get-Process | Select-Object -Property Name, Id
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Select-Object -ShowWindow
@@ -20,7 +20,7 @@ Get-Help -Name Select-Object -ShowWindow
 "hallo".ToUpper()
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Methods -ShowWindow
@@ -32,7 +32,7 @@ Get-Help -Name about_Methods -ShowWindow
 Get-Service | Where-Object Status -eq "Running"
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Where-Object -ShowWindow
@@ -44,7 +44,7 @@ Get-Help -Name Where-Object -ShowWindow
 Get-Process | Sort-Object CPU -Descending
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name Sort-Object -ShowWindow
@@ -56,10 +56,10 @@ Get-Help -Name Sort-Object -ShowWindow
 Get-Service | Format-Table Name, Status
 ```
 
-👉 Weitere Infos:  
+**Weitere Infos:**  
 
 ```powershell
 Get-Help -Name about_Format.ps1xml -ShowWindow
 ```
 
-👉 **Best Practice:** Erst filtern und sortieren, dann formatieren – so bleibt die Verarbeitung performant und übersichtlich.
+**Best Practice:** Erst filtern und sortieren, dann formatieren – so bleibt die Verarbeitung performant und übersichtlich.

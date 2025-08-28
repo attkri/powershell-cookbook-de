@@ -19,7 +19,7 @@ function Hallo {
 Hallo
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Functions' -ShowWindow
@@ -38,7 +38,7 @@ function Begruessung {
 Begruessung -Name "Attila"
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Parameters' -ShowWindow
@@ -60,7 +60,7 @@ function Get-Quadrat {
 Get-Quadrat -Zahl 5
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Functions_Advanced' -ShowWindow
@@ -82,7 +82,7 @@ Import-Module .\MeineModule\Hallo.psm1
 Hallo
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Modules' -ShowWindow
@@ -106,7 +106,7 @@ Get-Module -ListAvailable
 Remove-Module Pester
 ```
 
-👉 Weitere Infos:
+**Weitere Infos:**
 
 ```powershell
 Get-Help -Name 'about_Module' -ShowWindow

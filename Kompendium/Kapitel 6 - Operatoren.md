@@ -42,4 +42,4 @@ $a *= 4    # 24
 $a /= 6    # 4
 ```
 
-👉 **Best Practice:** Zuweisungsoperatoren sparsam nutzen – sie verkürzen Code, können aber die Lesbarkeit mindern.
+**Best Practice:** Zuweisungsoperatoren sparsam nutzen – sie verkürzen Code, können aber die Lesbarkeit mindern.

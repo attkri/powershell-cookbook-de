@@ -55,7 +55,7 @@ Get-Command -Module NetTCPIP
 Get-Command -ParameterName ComputerName
 ```
 
-💡 `gcm` ist der Alias für `Get-Command`.
+`gcm` ist der Alias für `Get-Command`.
 
 ## 3.5 About-Themen
 

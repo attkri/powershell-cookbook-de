@@ -41,4 +41,4 @@ $script:y = "Script"
 $local:z  = "Local"
 ```
 
-👉 **Best Practice:** Nur Scopes setzen, wenn wirklich nötig – sonst Standard-Variablen nutzen.
+**Best Practice:** Nur Scopes setzen, wenn wirklich nötig – sonst Standard-Variablen nutzen.
